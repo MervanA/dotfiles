@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+export VISUAL=vim;
+export EDITOR=vim;
+
+
+shopt -s histappend;
+shopt -s cmdhist
+shopt -s checkwinsize
+
+
+# History Exports
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+export HISTCONTROL='ignoreboth';
+export HISTCONTROL='erasedups';
+export HISTIGNORE='ls:bg:fg:history';
+export HISTTIMEFORMAT='%F %T ';
+export PROMPT_COMMAND='history -a';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# 256-Termx Colors with ANSI names, go crazy
+if [ "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
+# To have colors for ls and all grep commands such as grep, egrep and zgrep
+export CLICOLOR=1;
+
+
+export PATH="$PATH:/opt/moshell";
+export PATH="$PATH:/home/fstick/.local/bin"

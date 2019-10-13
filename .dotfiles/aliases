@@ -1,0 +1,59 @@
+#!/bin/bash
+
+#######################################################
+# GENERAL ALIAS'S
+#######################################################
+
+# Alias's to modified commands
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm --recursive --interactive --verbose'
+alias mkdir='mkdir -pv'
+alias ping='ping -c 4'
+alias cls='clear'
+alias vi='vim'
+alias df='df -H'
+alias du='du -ch'
+
+# Change directory aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Remove a directory and all files
+alias rmd='rm  --recursive --force --verbose --interactive'
+
+# Alias's for multiple directory listing commands
+alias ls='ls --color=always'
+alias lx='ls -lXBhA'
+alias lS='ls -lSrhA'
+alias lc='ls -lcrhA'
+alias lR='ls -lRhA'
+alias lt='ls -ltrAh'
+alias labc='ls -lap'
+alias lf='ls -l | grep -E -v "^d"'
+alias ldir='ls -l | grep -E "^d"'
+
+# colored grep
+alias grep='grep --color=ALWAYS'
+
+# alias chmod commands
+alias mx='chmod a+x'
+alias 000='chmod -Rv 000'
+alias 644='chmod -Rv 644'
+alias 666='chmod -Rv 666'
+alias 755='chmod -Rv 755'
+alias 777='chmod -Rv 777'
+
+# Search command line history
+alias hi='history | grep'
+
+# Search running processes
+alias ps='ps auxf'
+
+# Alias's for archives
+alias mktar='tar -cvf'
+alias mkbz2='tar -cvjf'
+alias mkgz='tar -cvzf'
+alias untar='tar -xvf'
+alias unbz2='tar -xvjf'
+alias ungz='tar -xvzf'
