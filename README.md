@@ -15,7 +15,7 @@ https://github.com/microsoft/cascadia-code/releases
 
 
 
-![alt text](https://raw.githubusercontent.com/MervanA/dotfiles/master/.dotfiles/tldr.JPG)
+![alt text](https://raw.githubusercontent.com/MervanA/dotfiles/master/.dotfiles/tldr.png)
 
 @your own risk
 ENJOY 
