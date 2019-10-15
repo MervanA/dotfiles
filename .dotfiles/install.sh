@@ -12,4 +12,4 @@ for i in ${dotfiles[@]} ; do
     cp -r "$i" ~
 done
 
-rm -Rf ~/dotfiles
+rm -Rf ${HOME}/dotfiles

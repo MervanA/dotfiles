@@ -1,11 +1,10 @@
 # dotfiles
 
-download (clone) repo to your home folder
+Installation Steps:
 
 ```
-git clone --bare https://github.com/MervanA/dotfiles.git $HOME/.dotfiles.git
+git clone https://github.com/MervanA/dotfiles.git
+bash  ~/dotfiles/.dotfiles/install.sh
 source ~/.bashrc
-echo ".dotfiles.git" >> .gitignore
-dotfiles checkout
-dotfiles config --local status.showUntrackedFiles no
 ```
+ENJOY 
