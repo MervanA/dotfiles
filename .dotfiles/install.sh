@@ -9,7 +9,7 @@ ${HOME}/dotfiles/.dotfiles
 )
 
 for i in ${dotfiles[@]} ; do
-    mv "$i" ~
+    cp "$i" ~
 done
 
 rm -Rf ~/dotfiles
