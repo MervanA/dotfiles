@@ -32,5 +32,5 @@ fi
 export CLICOLOR=1;
 
 
-export PATH="$PATH:/opt/moshell";
-export PATH="$PATH:/home/fstick/.local/bin"
+export PATH="$PATH:/home/fstick/eric/moshell";
+export PATH="$PATH:/home/fstick/.local/bin";
