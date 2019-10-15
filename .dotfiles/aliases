@@ -24,9 +24,8 @@ alias ...='cd ../..'
 alias ls='ls --color=always'
 alias lX='ls -lXBhA'
 alias lS='ls -lSrhA'
-alias lC='ls -lcrhA'
 alias lR='ls -lRhA'
-alias lt='ls -ltrAh'
+alias lt='ls -ltrhA'
 
 # colored grep
 alias grep='grep --color=ALWAYS'
@@ -52,3 +51,9 @@ alias mkgz='tar -cvzf'
 alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
+
+# resume wget by default
+alias wget='wget -c'
+
+# find a file insensitve name
+alias ff='find . -type f -iname'
