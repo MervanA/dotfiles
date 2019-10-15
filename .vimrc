@@ -1,66 +1,53 @@
-" Setting some decent VIM settings for programming
-
-ru! defaults.vim                " Use Enhanced Vim defaults
-set mouse=                      " Reset the mouse setting from defaults
-aug vimStartup | au! | aug END  " Revert last positioned jump, as it is defined below
-let g:skip_defaults_vim = 1     " Do not source defaults.vim again (after loading this system vimrc)
 "------------------------------------------------------------------------------
-
-set ai                          " set auto-indenting on for programming
-set showmatch                   " automatically show matching brackets. works like it does in bbedit.
+ru! defaults.vim                " Use Enhanced Vim defaults
+"------------------------------------------------------------------------------
 set vb                          " turn on the "visual bell" - which is much quieter than the "audio blink"
-set laststatus=2                " make the last line where the status is two lines deep so you can see status always
 set showmode                    " show the current mode
-set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
 set wildmode=list:longest,longest:full   " Better command line completion
 "------------------------------------------------------------------------------
-
-" Show EOL type and last modified timestamp, right after the filename
 " Set the statusline
 set statusline=%f               " filename relative to current $PWD
 set statusline+=%h              " help file flag
 set statusline+=%m              " modified flag
 set statusline+=%r              " readonly flag
 set statusline+=\ [%{&ff}]      " Fileformat [unix]/[dos] etc...
-set statusline+=\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})  " last modified timestamp
-set statusline+=%=              " Rest: right align
-set statusline+=%l,%c%V         " Position in buffer: linenumber, column, virtual column
-set statusline+=\ %P            " Position in buffer: Percentage
 "------------------------------------------------------------------------------
-
 set t_Co=256              " Use at least 256 colors
-
 "------------------------------------------------------------------------------
-
-set number
-set relativenumber
-"------------------------------------------------------------------------------
-
 set nocompatible
 set showcmd
-set encoding=utf-8
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 "------------------------------------------------------------------------------
-
-set cursorline
-set linebreak
-set ruler
-set hlsearch
-set incsearch
 set ignorecase
 set spell spelllang=en_us
-set undofile
 set autochdir
-set backupdir=~/.vim/backup/
-set undodir=~/.vim/undo/
-set visualbell
 set autoread
-set wildmenu
-set wildmode=longest:list,full
 syntax on
 syntax enable
 set paste
 "------------------------------------------------------------------------------
+set number              " show line numbers
+set wrap                " wrap lines
+set encoding=utf-8      " set encoding to UTF-8 (default was "latin1")
+set mouse=a             " enable mouse support (might not work well on Mac OS X)
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw screen only when we need to
+set showmatch           " highlight matching parentheses / brackets [{()}]
+set laststatus=2        " always show statusline (even with only single window)
+set ruler               " show line and column number of the cursor on right side of statusline
+set visualbell          " blink cursor on error, instead of beeping
+"------------------------------------------------------------------------------
+set tabstop=4           " width that a <TAB> character displays as
+set expandtab           " convert <TAB> key-presses to spaces
+set shiftwidth=4        " number of spaces to use for each step of (auto)indent
+set softtabstop=4       " backspace after pressing <TAB> will remove up to this many spaces
+"------------------------------------------------------------------------------
+set autoindent          " copy indent from current line when starting a new line
+set smartindent         " even better autoindent (e.g. add indent after '{')
+"------------------------------------------------------------------------------
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+"------------------------------------------------------------------------------
+" turn off search highlighting with <CR> (carriage-return)
+nnoremap <CR> :nohlsearch<CR><CR>
+
+
