@@ -62,4 +62,4 @@ export PS2="${FG_0087ff}>>> ${RESET}"
 #######################################################
 # dotfiles bare repo
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
