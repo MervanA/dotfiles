@@ -14,7 +14,6 @@ function fs() {
     fi
 }
 
-
 #######################################################
 # do you know which ENM ?
 
@@ -37,17 +36,16 @@ function whichENM() {
     fi
 }
 
-
 #######################################################
 # color snipit
 
 function 256-colors() {
-    for fgbg in 38 48 ; do # Foreground / Background
-        for color in {0..255} ; do # Colors
+    for fgbg in 38 48; do # Foreground / Background
+        for color in {0..255}; do # Colors
             # Display the color
             printf "\e[${fgbg};5;%sm  %4s  \e[0m" $color $color
             # Display 6 colors per lines
-            if [ $((($color + 1) % 6)) == 4 ] ; then
+            if [ $((($color + 1) % 6)) == 4 ]; then
                 echo # New line
             fi
         done
@@ -55,13 +53,51 @@ function 256-colors() {
     done
 }
 
-
 #######################################################
 # Debian login system refresh
 
 function refresh() {
-    sudo apt update
-    sudo apt upgrade
-    sudo apt autoremove
-    sudo updatedb
+    if [ -f "/etc/debian_version" ]; then
+        sudo apt update
+        sudo apt upgrade
+        sudo apt autoremove
+        sudo apt clean
+        sudo updatedb
+    fi
+}
+
+#######################################################
+# Shamless plugs.
+# https://www.tldp.org/LDP/abs/html/sample-bashrc.html
+
+function extract() { # Handy Extract Program
+    if [ -f $1 ]; then
+        case $1 in
+        *.tar.bz2) tar xvjf $1 ;;
+        *.tar.gz) tar xvzf $1 ;;
+        *.bz2) bunzip2 $1 ;;
+        *.rar) unrar x $1 ;;
+        *.gz) gunzip $1 ;;
+        *.tar) tar xvf $1 ;;
+        *.tbz2) tar xvjf $1 ;;
+        *.tgz) tar xvzf $1 ;;
+        *.zip) unzip $1 ;;
+        *.Z) uncompress $1 ;;
+        *) echo "'$1' try another method" ;;
+        esac
+    else
+        echo "'$1' is not a file!"
+    fi
+}
+
+# manpages with colors
+function man() {
+    env LESS_TERMCAP_mb=$(printf '\e[1;31m') \
+        LESS_TERMCAP_md=$(printf '\e[1;36m') \
+        LESS_TERMCAP_me=$(printf '\e[0m') \
+        LESS_TERMCAP_se=$(printf '\e[0m') \
+        LESS_TERMCAP_so=$(printf '\e[01;33m') \
+        LESS_TERMCAP_ue=$(printf '\e[0m') \
+        LESS_TERMCAP_us=$(printf '\e[1;4;31m') \
+        man "$@"
 }

@@ -55,5 +55,3 @@ alias ungz='tar -xvzf'
 # resume wget by default
 alias wget='wget -c'
 
-# find a file insensitve name
-alias ff='find . -type f -iname'
