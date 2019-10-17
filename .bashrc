@@ -50,7 +50,7 @@ fi
 # Simple PS1
 # \A HH:MM, \u Username, \H full host name, @SERVER Function, \w Full path, \W current directory
 PS1="${FG_00af5f}[\A]${RESET}--"
-PS1+="${FG_ffffff}${BG_005faf}[\u:\H@`whichENM`]${RESET}--"
+PS1+="${DIM}${FG_af5fff}[\u:\H@`whichENM`]${RESET}--"
 PS1+="${FG_ffaf00}[\w]${RESET}:\n"
 PS1+="${FG_00af5f}[\W]${RESET}"
 PS1+="\\$ "
@@ -63,3 +63,9 @@ export PS2="${FG_0087ff}>>> ${RESET}"
 # dotfiles bare repo
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+
+function dotupdate() {
+    dotfiles add -u
+    dotfiles commit -m "$1"
+    dotfiles push origin master
+}
