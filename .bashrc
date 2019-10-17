@@ -60,7 +60,7 @@ PS1+="\\$ "
 export PS2="${FG_0087ff}>>> ${RESET}"
 
 #######################################################
-# dotfiles bare repo
+# dotfiles
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
