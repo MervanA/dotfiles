@@ -65,7 +65,7 @@ export PS2="${FG_0087ff}>>> ${RESET}"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 function dotupdate() {
-    dotfiles add -u &&
-    dotfiles commit -m "$1" &&
+    dotfiles add -u &&\
+    dotfiles commit -m "$1" &&\
     dotfiles push origin master
 }
