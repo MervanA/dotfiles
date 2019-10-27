@@ -5,8 +5,7 @@ modify paths from .dotfiles/exports for your own setup.
 Installation Steps:
 
 ```
-cd ~
-git clone https://github.com/MervanA/dotfiles.git
+git clone https://github.com/MervanA/dotfiles.git ~/dotfiles
 bash  ~/dotfiles/.dotfiles/install.sh
 source ~/.bashrc
 ```
