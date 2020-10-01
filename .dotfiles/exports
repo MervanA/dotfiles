@@ -1,14 +1,11 @@
 #!/bin/bash
 
-
 export VISUAL=vim;
 export EDITOR=vim;
-
 
 shopt -s histappend;
 shopt -s cmdhist
 shopt -s checkwinsize
-
 
 # History Exports
 export HISTSIZE='32768';
@@ -31,6 +28,8 @@ fi
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1;
 
-
-export PATH="$PATH:/home/fstick/eric/moshell";
-export PATH="$PATH:/home/fstick/.local/bin";
+# tools and wsl2 x11
+export DISPLAY=$(ip route | awk '{print $3; exit}'):0
+export LIBGL_ALWAYS_INDIRECT=1
+export PATH="$PATH:/home/$(whoami)/eric/moshell";
+export PATH="$PATH:/home/$(whoami)/.local/bin";
