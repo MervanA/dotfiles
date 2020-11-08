@@ -39,6 +39,7 @@ alias mx='chmod a+x'
 alias 600='chmod -Rv 600'
 alias 644='chmod -Rv 644'
 alias 700='chmod -Rv 700'
+alias 711='chmod -v 711'
 alias 755='chmod -Rv 755'
 alias 777='chmod -Rv 777'
 
