@@ -7,8 +7,7 @@
 # Alias's to modified commands
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm --recursive --interactive --verbose'
-alias rmd='rm  --recursive --force --verbose --interactive'
+alias rm='rm --recursive --force --verbose --interactive'
 alias mkdir='mkdir -pv'
 alias cls='clear'
 alias vi='vim'
