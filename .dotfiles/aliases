@@ -21,7 +21,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # Alias's for multiple directory listing commands
-alias ls='ls --color=always'
+alias ls='ls --color=always --time-style="long-iso"'
 # sort by file extenstion alphabatically
 alias lX='ls -lXhAF'
 # reverse order sort by file size
