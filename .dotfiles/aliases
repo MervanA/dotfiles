@@ -23,13 +23,13 @@ alias ...='cd ../..'
 # Alias's for multiple directory listing commands
 alias ls='ls --color=always'
 # sort by file extenstion alphabatically
-alias lX='ls -lXBhA'
+alias lX='ls -lXhAF'
 # reverse order sort by file size
-alias lS='ls -lSrhA'
+alias lS='ls -lSrhAF'
 # recursiv subdirectory list
-alias lR='ls -lRhA'
+alias lR='ls -lRhAF'
 # reverse order modified time sorte
-alias lt='ls -ltrhA'
+alias lt='ls -ltrhAF'
 
 # colored grep
 alias grep='grep --color=ALWAYS'
