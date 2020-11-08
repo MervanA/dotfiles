@@ -34,7 +34,7 @@ alias lt='ls -ltrhAF'
 alias grep='grep --color=ALWAYS'
 
 # alias chmod commands
-alias mx='chmod a+x'
+alias mx='chmod u+x'
 alias 600='chmod -Rv 600'
 alias 644='chmod -Rv 644'
 alias 700='chmod -Rv 700'
