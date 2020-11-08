@@ -21,7 +21,7 @@ export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
 # 256-Termx Colors with ANSI names, go crazy
-if [ "$TERM" == "xterm" || "$TERM" == "vt100" ]; then
+if [ "$TERM" == "xterm" ] || [ "$TERM" == "vt100" ]; then
     export TERM=xterm-256color
 fi
 
