@@ -28,8 +28,6 @@ fi
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1;
 
-# tools and wsl2 x11
-export DISPLAY=$(ip route | awk '{print $3; exit}'):0
-export LIBGL_ALWAYS_INDIRECT=1
+# tools
 export PATH="$PATH:/home/$(whoami)/eric/moshell";
 export PATH="$PATH:/home/$(whoami)/.local/bin";
