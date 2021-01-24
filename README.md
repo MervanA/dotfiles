@@ -1,10 +1,8 @@
 # dotfiles
 
-modify paths from .dotfiles/exports for your own setup.
-
 Installation Steps:
 
-```
+```bash
 git clone https://github.com/MervanA/dotfiles.git ~/dotfiles
 bash  ~/dotfiles/.dotfiles/install.sh
 source ~/.bashrc
@@ -15,7 +13,7 @@ https://github.com/microsoft/cascadia-code/releases
 
 
 
-![alt text](https://raw.githubusercontent.com/MervanA/dotfiles/master/.dotfiles/tldr.png)
+![](https://raw.githubusercontent.com/MervanA/dotfiles/master/.dotfiles/tldr.png)
 
 @your own risk
 ENJOY 
