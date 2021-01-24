@@ -11,8 +11,6 @@ source ~/.bashrc
 Preferred Font:
 https://github.com/microsoft/cascadia-code/releases
 
-
-
 ![](https://raw.githubusercontent.com/MervanA/dotfiles/master/.dotfiles/tldr.png)
 
 @your own risk
