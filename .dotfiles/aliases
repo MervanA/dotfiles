@@ -11,7 +11,7 @@ alias rm='rm --recursive --force --verbose --interactive'
 alias mkdir='mkdir -pv'
 alias cls='clear'
 alias vi='vim'
-alias df='tree --du -ch'
+alias dt='tree --du -ch'
 alias du='du -ch'
 alias ping='ping -c 4'
 
