@@ -50,6 +50,6 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 function cfgupdate() {
 	cfg add -u &&
-		cfg commit -m "$1" &&
+		cfg commit -m "$@" &&
 		cfg push origin main
 }
