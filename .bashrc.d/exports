@@ -1,0 +1,75 @@
+#!/bin/bash
+
+#######################################################
+# User specific environment
+if ! [[ "$PATH" =~ $HOME/.local/bin:$HOME/bin: ]]; then
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+#######################################################
+# inputrc to .bashrc.d/
+export INPUTRC="${HOME}"/.config/inputrc
+
+#######################################################
+# export COLORTERM=truecolor
+export CLICOLOR=1
+
+#######################################################
+# install neovim
+export VISUAL=nvim
+export EDITOR=nvim
+
+#######################################################
+# History Exports
+export HISTSIZE='32768'
+export HISTFILESIZE="${HISTSIZE}"
+export HISTCONTROL='ignoreboth'
+export HISTCONTROL='erasedups'
+export HISTIGNORE='ls:bg:fg:history'
+export HISTTIMEFORMAT='%F %T '
+export PROMPT_COMMAND='history -a'
+
+#######################################################
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
+#######################################################
+# moshell
+export PATH="$PATH:$HOME/eric/moshell"
+
+#######################################################
+# golang
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+#######################################################
+# docker
+export PATH="/usr/bin:$PATH"
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
+
+# EbR displays error messages as blue text on a bright red background
+
+# E      Errors and informational messages.
+# P      Prompts.
+# S      Search results.
+# d      Bold text.
+# k      Blinking text.
+# s      Standout text.
+# u      Underlined text.
+
+
+# b      Blue
+# c      Cyan
+# g      Green
+# k      Black
+# m      Magenta
+# r      Red
+# w      White
+# y      Yellow
+export MANROFFOPT="-c"
+# export MANPAGER="less -R --use-color --color=ERb --color=PwK --color=SM --color=d+Y --color=kw --color=sYW --color=u+G"
+export LESS='-R --use-color -DERb$DPwK$DSM$Dd+Y$Dkw$DsYW$Du+G'

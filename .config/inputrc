@@ -1,0 +1,65 @@
+# This file controls the behaviour of line input editing
+# @author MervanA@git
+# https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html#Readline-Init-File-Syntax
+# with much more CTRL+V CTRL-INPUT
+# you could use "cat -v" for interactive interpretation of keypresses
+#
+# to directly resource the this inputrc after modifications press CTRL-X then CTRL-R
+
+# First, include any system-wide bindings and variable
+# assignments from /etc/Inputrc
+$include /etc/inputrc
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+set input-meta on
+set output-meta on
+set convert-meta off
+
+#Controls what happens when Readline wants to ring the terminal bell
+set bell-style visible
+
+#Readline performs filename matching and completion in a case-insensitive fashion
+set completion-ignore-case on
+
+# Show all autocomplete results at once
+set page-completions off
+
+#The number of possible completions, set to negative value is user shouldn't be asked
+set completion-query-items 150
+
+#The length in characters of the common prefix, TAB completion set to ... or NAME...
+set completion-prefix-display-length 1
+
+#If set to on, completed directory names have a slash appended
+set mark-directories on
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
+#If set to ‘on’, a character denoting a file’s type is appended to the filename when listing possible completions
+set visible-stats on
+
+#Words which have more than one possible completion cause the matches to be listed immediately instead of ringing the bell
+set show-all-if-ambiguous on
+
+#Words which have more than one possible completion without any possible partial completion to be listed immediately instead of ringing the bell
+set show-all-if-unmodified on
+
+#Tilde ~ expansion is performed when Readline attempts word completion
+set expand-tilde on
+
+#Readline displays possible completions using different colors to indicate their file type, not usufall with completion-prefix-display-length > 0
+set colored-stats on
+
+#When listing completions, Readline displays the common prefix of the set of possible completions using a different color
+set colored-completion-prefix on
+
+# Be more intelligent when autocompleting by also looking at the text after
+# the cursor. For example, when the current line is "cd ~/src/mozil", and
+# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
+# ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
+# Readline used by Bash 4.)
+set skip-completed-text on
+
+# Flip through autocompletion matches with Shift-Tab.
+"\e[Z": menu-complete

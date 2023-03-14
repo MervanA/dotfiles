@@ -1,0 +1,62 @@
+#!/bin/bash
+
+#######################################################
+# GENERAL ALIAS'S
+#######################################################
+
+# Alias's to modified commands
+alias cp='cp -riv'
+alias mv='mv -iv'
+alias rm='rm -rivf'
+alias mkdir='mkdir -vp'
+alias cls='clear'
+alias vi='vim'
+alias dt='tree -ch'
+alias du='du -ch'
+alias ping='ping -c 4'
+
+# Change directory aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# colored 
+alias ls='ls --color=auto --time-style="long-iso"'
+alias ip='ip -color=auto'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+
+# sort by file extenstion alphabatically
+alias lX='ls -lXhAF'
+# reverse order sort by file size
+alias lS='ls -lSrhAF'
+# recursiv subdirectory list
+alias lR='ls -lRhAF'
+# reverse order modified time sort
+alias lt='ls -ltrhAF'
+
+
+
+# alias chmod commands
+alias 600='chmod -v 600'
+alias 644='chmod -v 644'
+alias 700='chmod -v 700'
+alias 711='chmod -v 710'
+alias 755='chmod -v 755'
+alias 777='chmod -v 777'
+
+# Search command line history
+alias hi='history | grep -i'
+
+# Search running processes
+alias ps='ps faxu'
+
+# Alias's for archives
+alias mktar='tar -cvf'
+alias mkxz='tar -cvJf'
+alias mkgz='tar -cvzf'
+
+# Alias golang extract to extract
+alias extract='$HOME/.bashrc.d/extractor'
+
+# resume wget by default
+alias wget='wget -c'

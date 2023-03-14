@@ -1,0 +1,50 @@
+#!/bin/bash
+#######################################################
+# color snipit
+
+function 256-colors() {
+  for fgbg in 38 48; do
+    for color in {0..255}; do
+      printf "\e[${fgbg};5;%sm  %4s  \e[0m" "$color" "$color"
+      if (((color + 1) % 6 == 4)); then
+        printf "\n"
+      fi
+    done
+    printf "\n"
+  done
+}
+
+#######################################################
+# Update the package index and clean up unused packages and cached files
+# Usage: refresh
+function refresh() {
+  # Enable strict error checking
+  # set -euo pipefail
+
+  # Detect the system type based on /etc/*-release files
+  system_type=""
+  if [ -f "/etc/debian_version" ]; then
+    system_type="debian"
+  elif [ -f "/etc/fedora-release" ]; then
+    system_type="fedora"
+  else
+    echo "Error: Unsupported system type" >&2
+    return 1
+  fi
+
+  # Update the package index and clean up unused packages and cached files
+  case "$system_type" in
+  debian)
+    sudo apt-get update
+    sudo apt-get autoremove
+    sudo apt-get clean
+    sudo updatedb 2>&-
+    ;;
+  fedora)
+    sudo dnf upgrade --refresh -y
+    sudo dnf autoremove -y
+    # sudo dnf clean all
+    sudo updatedb 2>&-
+    ;;
+  esac
+}
