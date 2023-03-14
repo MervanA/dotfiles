@@ -9,13 +9,9 @@ destdir="${HOME}"
 # Copy all files and directories from the source directory to the destination directory,
 # excluding the .git directory
 echo "Installing dotfiles: "
-rsync -a --exclude='.git' -P "${srcdir}/" "${destdir}/" | while read -r _; do
-  cursor="/-\\|"
-  i=0
-  echo -n "${cursor:$i:1}"
-  i=$(( (i+1) % ${#cursor} ))
-  sleep 0.05
-  echo -en "\b"
+rsync -a --exclude='.git' -P "${srcdir}/" "${destdir}/"  | while read -r _; do
+  printf '%s' "."
+  sleep 0.01
 done
 
 # Source the new .bashrc file
