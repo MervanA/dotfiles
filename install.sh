@@ -11,7 +11,7 @@ destdir="${HOME}"
 echo "Installing dotfiles: "
 rsync -a --exclude='.git' -P "${srcdir}/" "${destdir}/"  | while read -r _; do
   printf '%s' "."
-  sleep 0.01
+  sleep 0.05
 done
 
 # Source the new .bashrc file
