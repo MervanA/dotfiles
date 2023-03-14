@@ -18,4 +18,4 @@ source "${HOME}/.bashrc"
 rm -rf "${srcdir}"
 
 # Output a message indicating that the installation is complete
-prinf '%s' "Dotfiles installed to ${destdir}"
+printf '%s' "Dotfiles installed to ${destdir}"
