@@ -1,0 +1,12 @@
+[user]
+	name = MervanA
+	email = mervan.abughosh@outlook.com
+[core]
+	editor = code
+	autocrlf = input
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[init]
+	defaultBranch = main
