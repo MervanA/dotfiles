@@ -1,8 +1,10 @@
 #!/bin/bash
 
-for file in "${HOME}"/dotfiles-main/.*; do
-    if [ -f "$file" ] || [ -d "$file" ]; then
-        cp -b "$file" -t "${HOME}"
+for source in "${HOME}"/dotfiles-main/.*; do
+    if [ -f "$source" ] || [ -d "$source" ]; then
+        if [ "$source" != "${HOME}/dotfiles-main/.git" ]; then
+        cp -rb "$source" -t "${HOME}"
+        fi
     fi
 done
 
