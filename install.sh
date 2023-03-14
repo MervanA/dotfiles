@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Define the source directory of your dotfiles
-srcdir="${HOME}/dotfiles-main"
+srcdir="${HOME}"/dotfiles-main
 
 # Define the destination directory for your dotfiles in your home directory
 destdir="${HOME}"
@@ -16,7 +16,7 @@ done
 
 # Source the new .bashrc file
 # shellcheck source=/dev/null
-source "${HOME}/.bashrc"
+source "${HOME}"/.bashrc
 
 # Output a message indicating that the installation is complete
 printf '\n\n%s\n' "Dotfiles installed to ${destdir}"
