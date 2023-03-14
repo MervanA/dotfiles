@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for file in "${HOME}"/dotfiles-main/.*; do
-    if [ -f "$file" ]; then
+    if [ -f "$file" ] || [ -d "$file" ]; then
         cp -b "$file" -t "${HOME}"
     fi
 done
