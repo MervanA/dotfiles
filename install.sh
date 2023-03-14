@@ -1,14 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-for source in "${HOME}"/dotfiles-main/.*; do
-    if [ -f "$source" ] || [ -d "$source" ]; then
-        if [ "$source" != "${HOME}/dotfiles-main/.git" ]; then
-        cp -rb "$source" -t "${HOME}"
-        fi
-    fi
-done
+# Define the source directory of your dotfiles
+srcdir="${HOME}/dotfiles-main"
 
-rm -rf "${HOME}/dotfiles-main"
+# Define the destination directory for your dotfiles in your home directory
+destdir="${HOME}"
 
+# Copy all files and directories from the source directory to the destination directory,
+# excluding the .git directory
+rsync -av --exclude='.git' "${srcdir}/" "${destdir}/"
+
+# Source the new .bashrc file
 # shellcheck source=/dev/null
-source "${HOME}"/.bashrc
+source "${HOME}/.bashrc"
+
+# Remove the source directory
+rm -rf "${srcdir}"
+
+# Output a message indicating that the installation is complete
+prinf '%s' "Dotfiles installed to ${destdir}"
