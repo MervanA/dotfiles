@@ -17,7 +17,7 @@ fi
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
 	for rc in ~/.bashrc.d/*; do
-		if [ -f "$rc" ] && [ ! -x "$rc" ] && [ ! -d "$rc" ]; then
+		if [ -f "$rc" ] && [ ! -x "$rc" ]; then
 			# shellcheck source=/dev/null
 			source "$rc"
 		fi
