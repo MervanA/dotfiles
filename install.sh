@@ -9,7 +9,7 @@ destdir="${HOME}"
 # Copy all files and directories from the source directory to the destination directory,
 # excluding the .git directory
 echo "Installing dotfiles: "
-rsync -a --exclude='.git' "${srcdir}/" "${destdir}/" | while read -r _; do
+rsync -a --exclude='.git' --info=progress2 --line-buffered "${srcdir}/" "${destdir}/" | while read -r _; do
   echo -n "."
   sleep 0.05
 done
@@ -22,4 +22,4 @@ source "${HOME}/.bashrc"
 rm -rf "$(dirname "${BASH_SOURCE[0]}")"
 
 # Output a message indicating that the installation is complete
-printf '%s\n\n' "Dotfiles installed to ${destdir}"
+printf '\n\n%s\n' "Dotfiles installed to ${destdir}"
